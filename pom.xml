@@ -9,6 +9,7 @@
     <modules>
         <module>member</module>
         <module>common</module>
+        <module>gateway</module>
     </modules>
     <name>myTrain</name>
     <description>Demo project for Spring Boot</description>
