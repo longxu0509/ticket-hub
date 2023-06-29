@@ -1,5 +1,7 @@
 package com.ustc.train.member.controller;
 
+import com.ustc.train.common.resp.CommonResp;
+import com.ustc.train.member.req.MemberRegisterReq;
 import com.ustc.train.member.service.MemberService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
@@ -22,5 +24,12 @@ public class MemberController {
     @ResponseBody
     public int count(){
         return memberService.count();
+    }
+
+    @RequestMapping("/register")
+    @ResponseBody
+    public CommonResp<Long> register(MemberRegisterReq memberRegisterReq){
+        long register = memberService.register(memberRegisterReq);
+        return new CommonResp<>(register);
     }
 }
