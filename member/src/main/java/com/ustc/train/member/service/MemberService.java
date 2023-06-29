@@ -5,6 +5,7 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.ustc.train.common.exception.BusinessException;
 import com.ustc.train.common.exception.BusinessExceptionEnum;
+import com.ustc.train.common.util.SnowUtil;
 import com.ustc.train.member.domain.Member;
 import com.ustc.train.member.domain.MemberExample;
 import com.ustc.train.member.mapper.MemberMapper;
@@ -39,7 +40,7 @@ public class MemberService {
         }
 
         Member member = new Member();
-        member.setId(RandomUtil.randomLong(5));
+        member.setId(SnowUtil.getSnowflakeNextId());
         member.setMobile(mobile);
         memberMapper.insert(member);
         return member.getId();

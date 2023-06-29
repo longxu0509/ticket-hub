@@ -4,7 +4,9 @@ import com.ustc.train.common.resp.CommonResp;
 import com.ustc.train.member.req.MemberRegisterReq;
 import com.ustc.train.member.service.MemberService;
 import jakarta.annotation.Resource;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,7 +30,7 @@ public class MemberController {
 
     @RequestMapping("/register")
     @ResponseBody
-    public CommonResp<Long> register(MemberRegisterReq memberRegisterReq){
+    public CommonResp<Long> register(@Valid MemberRegisterReq memberRegisterReq){
         long register = memberService.register(memberRegisterReq);
         return new CommonResp<>(register);
     }
