@@ -1,7 +1,7 @@
 <template>
   <a-row class="login">
     <a-col :span="8" :offset="8" class="login-main">
-      <h1 style="text-align: center"><rocket-two-tone />&nbsp;TicketHub 12306 售票系统</h1>
+      <h1 style="text-align: center"><rocket-two-tone />&nbsp;甲蛙12306售票系统</h1>
       <a-form
           :model="loginForm"
           name="basic"
@@ -42,6 +42,7 @@ import { defineComponent, reactive } from 'vue';
 import axios from 'axios';
 import { notification } from 'ant-design-vue';
 import { useRouter } from 'vue-router'
+import store from "@/store";
 
 export default defineComponent({
   name: "login-view",
@@ -74,6 +75,7 @@ export default defineComponent({
           notification.success({ description: '登录成功！' });
           // 登录成功，跳到控台主页
           router.push("/");
+          store.commit("setMember", data.content);
         } else {
           notification.error({ description: data.message });
         }

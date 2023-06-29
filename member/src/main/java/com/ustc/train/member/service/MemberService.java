@@ -4,8 +4,10 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.RandomUtil;
+import cn.hutool.jwt.JWTUtil;
 import com.ustc.train.common.exception.BusinessException;
 import com.ustc.train.common.exception.BusinessExceptionEnum;
+import com.ustc.train.common.util.JwtUtil;
 import com.ustc.train.common.util.SnowUtil;
 import com.ustc.train.member.domain.Member;
 import com.ustc.train.member.domain.MemberExample;
@@ -98,8 +100,8 @@ public class MemberService {
         }
 
         MemberLoginResp memberLoginResp = BeanUtil.copyProperties(memberDB, MemberLoginResp.class);
-//        String token = JwtUtil.createToken(memberLoginResp.getId(), memberLoginResp.getMobile());
-//        memberLoginResp.setToken(token);
+        String token = JwtUtil.createToken(memberLoginResp.getId(), memberLoginResp.getMobile());
+        memberLoginResp.setToken(token);
         return memberLoginResp;
     }
 
