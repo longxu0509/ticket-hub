@@ -15,8 +15,8 @@ token: {{token}}
 
 {
   "id": 1628627322414436352,
-  "name": "test2",
-  "idCard": "123222",
+  "name": "test3",
+  "idCard": "232",
   "type": "1"
 }
 
@@ -28,7 +28,7 @@ token: {{token}}
 
 ###
 
-DELETE http://localhost:8000/member/passenger/delete/1628627401883914240
+DELETE http://localhost:8000/member/passenger/delete/1674610996095881216
 Accept: application/json
 token: {{token}}
 

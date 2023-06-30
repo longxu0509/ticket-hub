@@ -45,9 +45,6 @@ public class LogAspect {
     @Before("controllerPointcut()")
     public void doBefore(JoinPoint joinPoint) {
 
-        // 日志流水号
-        MDC.put("LOG_ID", System.currentTimeMillis() + RandomUtil.randomString(3));
-
         // 开始打印请求日志
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();

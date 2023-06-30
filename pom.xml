@@ -11,6 +11,8 @@
         <module>common</module>
         <module>gateway</module>
         <module>generator</module>
+        <module>business</module>
+        <module>batch</module>
     </modules>
     <name>myTrain</name>
     <description>Demo project for Spring Boot</description>
@@ -68,6 +70,12 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.22</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>1.4.6</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
