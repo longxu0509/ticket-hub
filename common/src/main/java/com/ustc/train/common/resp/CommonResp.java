@@ -1,10 +1,5 @@
 package com.ustc.train.common.resp;
 
-/**
- * @author xulong
- * @version 1.0
- * @email longxu@mail.ustc.edu.cn
- */
 public class CommonResp<T> {
 
     /**
@@ -23,6 +18,12 @@ public class CommonResp<T> {
     private T content;
 
     public CommonResp() {
+    }
+
+    public CommonResp(boolean success, String message, T content) {
+        this.success = success;
+        this.message = message;
+        this.content = content;
     }
 
     public CommonResp(T content) {

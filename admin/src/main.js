@@ -36,4 +36,3 @@ axios.interceptors.response.use(function (response) {
 axios.defaults.baseURL = process.env.VUE_APP_SERVER;
 console.log('环境：', process.env.NODE_ENV);
 console.log('服务端：', process.env.VUE_APP_SERVER);
-

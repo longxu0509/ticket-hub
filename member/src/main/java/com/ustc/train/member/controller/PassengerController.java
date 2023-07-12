@@ -11,6 +11,8 @@ import jakarta.annotation.Resource;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author xulong
  * @version 1.0
@@ -43,4 +45,15 @@ public class PassengerController {
         return new CommonResp<>();
     }
 
+    @GetMapping("/query-mine")
+    public CommonResp<List<PassengerQueryResp>> queryMine() {
+        List<PassengerQueryResp> list = passengerService.queryMine();
+        return new CommonResp<>(list);
+    }
+
+    @GetMapping("/init")
+    public CommonResp<Object> init() {
+        passengerService.init();
+        return new CommonResp<>();
+    }
 }

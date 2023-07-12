@@ -15,7 +15,7 @@ import org.springframework.core.env.Environment;
  */
 @SpringBootApplication
 @ComponentScan("com.ustc")
-@MapperScan("com.ustc.train.member.mapper")
+@MapperScan("com.ustc.train.*.mapper")
 public class MemberApplication {
     private static final Logger LOG = LoggerFactory.getLogger(MemberApplication.class);
 
